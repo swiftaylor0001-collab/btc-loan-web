@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bitcoin Loan Service</title>
+  <style>
+    body { font-family: Arial; background:#f5f5f5; padding:30px;}
+    h1 {color:#222;}
+    form {background:white; padding:20px; max-width:400px; border-radius:6px;}
+    input, button {width:100%; margin-top:10px; padding:10px;}
+    button {background:black; color:white; border:none; cursor:pointer;}
+  </style>
+</head>
+<body>
+  <h1>Bitcoin Loan Service</h1>
+  <p>Request a short-term Bitcoin loan. Manual approval only.</p>
+
+  <form id="loanForm">
+    <input type="text" placeholder="Full Name" required />
+    <input type="text" placeholder="Telegram or WhatsApp" required />
+    <input type="number" placeholder="Loan Amount (USD)" required />
+    <input type="text" placeholder="BTC Wallet Address" required />
+    <input type="date" required />
+    <button type="submit">Submit Request</button>
+  </form>
+
+  <p id="msg"></p>
+
+  <script>
+    document.getElementById("loanForm").addEventListener("submit", e => {
+      e.preventDefault();
+      document.getElementById("msg").innerText =
+        "Request submitted. We will contact you shortly.";
+    });
+  </script>
+</body>
+</html>
